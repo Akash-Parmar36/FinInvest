@@ -1,0 +1,121 @@
+import { useState } from "react";
+import axios from "axios";
+import toast, { Toaster } from 'react-hot-toast';
+
+const Signup = () => {
+  const [inputValue, setInputValue] = useState({
+    email: "",
+    password: "",
+    name: "",
+  });
+
+
+  const handleOnChange = (e) => {
+    setInputValue({
+      ...inputValue,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+     
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const {email , name , password} = inputValue;
+
+    try{
+          const response = await axios.post("http://localhost:3002/auth/register" , {email , name , password});
+          console.log(response.data);
+
+          if(response.data.success){
+            toast.success(response.data.message);
+          }
+
+          setTimeout(() => {
+              window.location.href = "http://localhost:3001/login"; 
+          }, 2000);
+
+    }catch(error){
+       console.log(error);
+       toast.error(error.response.data.message);
+    }
+  };
+
+  return (
+    <div className="container mt-5 mt-md-0 px-5 p-sm-3">
+      <div className="row justify-content-center justify-content-lg-between justify-content-xl-around">
+        <div className="col-lg-6 mt-lg-5 mt-xxl-2 px-0 mb-5 mb-lg-0">
+          <img
+            src="./media/images/Signup_account_open.svg"
+            className="img-fluid "
+          />
+        </div>
+        <div className="col d-md-none ps-0 mt-4">
+              <h1 className="fw-bolder" style={{color:"#424242" , fontSize:"22px" ,lineHeight:"1.3"}}>Open a free demat & trading account online</h1>
+        </div>
+        <div className="col-lg-5 mt-4 mt-lg-0 col-xl-4 form-container border border-black border-1 border-opacity-10 rounded p-5 text-center">
+                
+              <img
+                src="media/images/kite_logo.png"
+                alt="kite product logo"
+                style={{ width: "3.75rem", height: "2.5rem" }}
+              />
+             
+              <h2 className="fw-normal fs-4 mt-3" style={{ color: "#444444" }}>
+                Signup to Zerodha
+              </h2>
+              
+              <form onSubmit={handleSubmit} className="mt-3">
+                <div className="input-field mb-3">
+                  <input
+                    type="email"
+                    name="email"
+                    value={inputValue.email}
+                    onChange={handleOnChange}
+                    required
+                  />
+                  <label htmlFor="email">Email</label>
+                </div>
+                <div className="input-field mb-3">
+                  <input
+                    type="text"
+                    name="name"
+                    value={inputValue.name}
+                    onChange={handleOnChange}
+                    required
+                  />
+                  <label htmlFor="username">Username</label>
+                </div>
+                <div className="input-field">
+                  <input
+                    type="password"
+                    name="password"
+                    value={inputValue.password}
+                    onChange={handleOnChange}
+                    required
+                  />
+                  <label htmlFor="password">Password</label>
+                </div>
+                <div className="mt-3 mb-3">
+                  <button
+                    type="submit"
+                    className="w-100 p-2 text-white border rounded"
+                    style={{ backgroundColor: "#FF5722" }}
+                  >
+                    Submit
+                  </button>
+                </div>
+                <div className="text-center">
+                  <a href="http://localhost:3001/login" className="signup-link">
+                    Already have an account? Login!
+                  </a>
+                </div>
+              </form>
+        </div>
+      </div>
+      <Toaster />
+    </div>
+  );
+};
+
+export default Signup;

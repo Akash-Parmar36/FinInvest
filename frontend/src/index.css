@@ -1,0 +1,482 @@
+body {
+  margin: 0;
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI',  'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+ 
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.zerodha-heading {
+  font-size: clamp(24px, 5vw, 28px);
+  color: #424242;
+}
+
+.zerodha-heading_openAccount{
+  font-size: clamp(20px, 2.5vw, 24px);
+  color: #424242;
+} 
+
+.zerodha-heading_2{
+    font-size: 24px;
+    color: #444444;
+}
+
+.zerodha-subtext { /* for paragraph */
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.zerodha-subtext_2{
+  font-size:  17px;
+  line-height: 1.6;
+}
+
+.investment_heading{
+   font-size: 24px;
+   color: #424242;
+}
+
+@media screen and (max-width: 800px)  {
+  .zerodha-subtext_2{
+      font-size: 14px;
+  }
+  .investment_heading{
+    font-size: 20px;
+ }
+}
+
+.signup_button{
+  max-width: 250px;
+  margin: 0 auto;
+  translate: -60px;
+}
+
+@media screen and (max-width:1300px){
+.signup_button{
+ translate: -10px;
+}
+}
+
+.signup_div{
+    max-width: 400px;
+}
+
+.signup_img{
+    max-width: 112px;
+    max-height: 100%;
+}
+
+@media screen and (max-width: 768px){
+   .signup_img{
+      max-width: 60px;
+  }
+  .signup_div{
+    max-width: 100%;
+  }
+
+  .signup_button{
+    translate: 0px;
+   }
+}
+
+@media screen and (min-width:1300px){
+   .investment_heading{
+    position: relative;
+    left: -55px;
+  }
+}
+
+@media (min-width:1052px) and (max-width:1300px){
+  .investment_heading{
+      position: relative;
+      left: 25px;
+  }
+}
+
+.demat-account{
+    color:#424242;
+    height: 2.25rem;
+    font-size: 20px;
+}
+
+.demat-account_img{
+     width: 350px;
+}
+
+.demat-account_h2{
+     font-size: 24px;
+     line-height: 1.6;
+}
+
+@media (min-width:992px) and (max-width:1300px) {
+  .demat-account_h2{
+     font-size: 20px;
+  }
+}
+
+@media screen and (max-width:607px) {
+  .demat-account_h2{
+     font-size: 20px;
+  }
+}
+
+
+@media screen and (max-width:576px) {
+  .demat-account{
+      font-size: 14px;
+      height: fit-content;
+  }
+}
+
+@media screen and (max-width:992px){
+  .demat-account_img{
+     width: 550px;
+  }
+}
+
+
+/* pricing page */
+
+.pricing_h2{
+     color: #424242;
+     font-size: 28px;
+}
+
+@media screen and (max-width:800px) {
+    .pricing_h2{
+       font-size: 24px;
+    }
+}
+
+.pricing_img{
+     width: 250px;
+     height: 184.78px;
+}
+
+.row_display {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;  /* flex-direction | flex-wrap */
+}
+
+.four {
+  flex-basis: 30.6666666667%;
+  width: 30.6666666667%
+}
+ 
+@media screen and (max-width: 800px) {
+  .columns {
+      min-width: 100%;
+  }
+  .pricing_img{
+    width: 150px;
+    height: 110.86px;
+}
+}
+
+
+/* Pricing Page TableQuantity Component */
+
+.tabs{
+      border-bottom: 1px solid #e1e1e1;
+      margin-bottom: 30px;
+}
+
+
+.tab-button{
+      min-width: 130px;
+      font-size: 1.5rem;
+      padding: 6px 15px;
+      margin: 0 3px 0 0;
+      text-align: center;
+}
+ 
+
+table {
+  border-spacing: 0;
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+}
+
+table td {
+  /* padding: 12px 15px; */
+  padding: 14px 18px;
+  line-height: 1.8;
+}
+
+table th {
+  color: #424242 !important;
+  font-weight: 500;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+  /* padding: 12px 15px; */
+  padding: 14px 18px;
+}
+ 
+
+.table_row td{
+    font-size: 14px;
+    color: #424242;
+}
+
+.table_row tr td:first-child{
+     font-size: 14.4px;
+     color: #666666;
+}
+
+
+.FO{
+    display: none;
+}
+
+@media screen and (max-width:800px) {
+    .hide-on-mobile{
+      display: none;
+    }
+
+    .FO{
+       display: block;
+     }
+
+     .tab-button{
+         min-width: 50px;
+         font-size: 1rem;
+         padding: 6px;
+     }
+}
+
+
+@media screen and (max-width : 400px){
+  table td {
+    padding: 12px 15px;
+  }
+  
+  table th {
+    padding: 12px 15px;
+  }
+}
+ 
+.rowColor td {
+  background-color: #FBFBFB;
+}
+ 
+
+.tab-button:hover{
+  color: #424242 !important;
+  cursor: pointer;
+}
+ 
+
+
+/* Pricing Page Brokerage Component */
+
+
+.brokerage_h2{
+     font-size: 1.5rem;
+     line-height: 1.5;
+     font-weight: 500;
+     color: #424242;
+     padding: 80px 0 0 0;
+     margin: 0 0 20px 0;
+}
+
+.brokerage_col_h2{
+    font-size: 1rem;
+    line-height: 1.8;
+    margin: 16px 0 15px;
+    color: #424242;
+}
+
+.brokerage_col_p_text{
+    font-size: 0.75rem;
+    line-height: 1.8;
+    margin: 12px 0 15px 0;
+    color: #424242;
+}
+
+
+.brokerage_ul{
+     font-size: 0.75rem;
+     padding-left: 20px;
+     margin: 12px 0;
+     color: #424242;
+     line-height: 1.8;
+}
+
+.brokerage_six{
+   flex-basis: 48%;
+   width: 48%;
+}
+
+.brokerage_flex{
+   display: flex;
+   justify-content: space-between;
+   flex-flow: row wrap;
+}
+
+/* .brokerage_columns {
+  box-sizing: border-box;
+  flex: 0 1 auto;
+} */
+
+@media screen and (max-width: 800px) {
+  .brokerage_columns {
+      min-width: 100%;
+  }
+
+  .brokerage_h2{
+    padding: 60px 0 0 0;
+  }
+}
+
+
+
+/*Pricing Page DematAMC */
+.DematAMC_p{
+  font-size: 0.85rem;
+  line-height: 1.8;
+  margin: 12px 0 15px 0;
+  color: #424242;
+}
+
+@media screen and (max-width:1287px) {
+   .DematAMC_p{
+      font-size: 0.75rem;
+   }
+}
+
+
+
+
+
+.nav-link{
+   margin-left: 3rem;
+}
+
+.custom-hover{
+  color: dimgray;
+}
+
+.custom-hover:hover{
+   color:#0072e4 ;
+}
+ 
+  
+#supportHero{
+   background-color: #387ed1;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.supportAnchor{
+   color:#387ed1;
+}
+
+
+
+ 
+
+
+/* For signup and login */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+  
+ .input-field{
+     position: relative;
+ }
+
+ .input-field input{
+      width: 100%;
+      height: 50px;
+      border-radius: 4px;
+      padding: 0 15px;
+      font-size: 18px;
+      border: 2px solid rgb(0, 0 , 0, 0.1);
+      outline: none;
+      color: #444444;
+      
+ }
+
+ .input-field label{
+     position: absolute;
+     top: 50%;
+     left: 15px;
+     color: #444444;
+     font-size: 19px;
+     transform: translateY(-50%);
+     transition: .3s;
+     pointer-events: none;
+ }
+
+ input:focus{
+  border: 2px solid rgb(0, 0 , 0, 0.2);
+ }
+
+ input:focus ~ label,
+ input:valid ~ label{
+        top: 0;
+        padding: 0 10px;
+        font-size: 16px;
+        background-color: #fff;
+        color: #000;
+ }
+ 
+ .form-container{
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      background-color: #fff;
+ }
+
+ .signup-link{
+     text-decoration: none;
+     color: #9b9b9b;
+     font-size: 0.8rem;
+ }
+
+ .signup-link:hover{
+    color:#ff5722;
+ }
+
+ .sebi{
+     font-size: 0.8rem;
+     color: #9b9b9b;
+ }
+ 
+
+ .account-type{
+     border: 1px solid #e1e1e1;
+     border-radius: 5px;
+     position: relative;
+     padding: 30px;
+ }
+
+ .account-type:hover{
+    border-color: #387ed1;
+    cursor: pointer;
+ }
+
+ .account-type img{
+     position: absolute;
+     left: -18px;
+     background-color: #eff6ff;
+     border-radius: 50%;
+     padding: 6px;
+ }
