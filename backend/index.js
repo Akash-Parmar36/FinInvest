@@ -31,9 +31,20 @@ async function main() {
 }
 
 
-app.use(cors());  
-app.use(bodyParser.json()); 
+// CORS FIX (IMPORTANT)
+app.use(
+  cors({
+    origin: "https://fininvest-dashboard.onrender.com",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "authorization"],
+    credentials: true,
+  })
+);
 
+// Allow preflight requests
+app.options("*", cors());
+
+app.use(bodyParser.json()); 
 
 app.get('/' , (req,res) => {
     res.send("Hello World !");
