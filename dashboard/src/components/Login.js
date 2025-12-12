@@ -7,15 +7,13 @@ import { useAuth } from "../context/auth";
 const Login = () => {
  const [showPassword, setShowPassword] = useState(false);
  
-//  const [loading, setLoading] = useState(false);
- 
  const [inputValue, setInputValue] = useState({
    email: "",
    password: "",
  });
 
  const navigate = useNavigate();
- const {auth , setAuth , isLogoutLoading , setIsLogoutLoading} = useAuth();
+ const { setAuth , isLoading , setIsLoading} = useAuth();
 
  const handleOnChange = (e) => {
    setInputValue({
@@ -29,9 +27,10 @@ const Login = () => {
    const {email , password} = inputValue;
   
    try{  
-    setIsLogoutLoading(true);
+    setIsLoading(true);
 
-         const response = await axios.post("http://localhost:3002/auth/login" , {email , password});
+        //  const response = await axios.post("http://localhost:3002/auth/login" , {email , password});
+         const response = await axios.post("https://fininvest-backend.onrender.com/auth/login" , {email , password});
         //  console.log(response.data);
           
          if(response.data.success){
@@ -44,19 +43,19 @@ const Login = () => {
          localStorage.setItem("authInfo" , JSON.stringify(response.data));
 
          setTimeout(() => {
-          setIsLogoutLoading(false);
+          setIsLoading(false);
              navigate("/"); 
-         }, 2500);
+         }, 2800);
 
    }catch(error){
       console.log(error);
-      setIsLogoutLoading(false);
+      setIsLoading(false);
       toast.error(error.response.data.message);
    }
  };
 
 return (
-  isLogoutLoading ? (   <div className="loading-screen">
+  isLoading ? (   <div className="loading-screen">
     <div className="loader"></div>
     <Toaster />
   </div> ) :

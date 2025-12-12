@@ -10,7 +10,7 @@ const Orders = () => {
   const { refreshTrigger } = useOrderRefresh(); 
  
   useEffect(() => {
-           axios.get("http://localhost:3002/data/allOrders", {
+           axios.get("https://fininvest-backend.onrender.com/data/allOrders", {   //http://localhost:3002/data/allOrders
             headers: {
               'authorization': `${auth.token}`,
               'Content-Type': 'application/json'

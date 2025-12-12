@@ -9,7 +9,7 @@ const Menu = () => {
   const [selectedMenu, setSelectedMenu] = useState(0);
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
   
-  const { setAuth , setIsLogoutLoading } = useAuth();
+  const { setAuth , setIsLoading } = useAuth();
   const navigate = useNavigate();
   
   const handleMenuClick = (index) => {
@@ -107,7 +107,7 @@ const Menu = () => {
                 <div>
                     <p className="">My Profile</p> 
                     <p className="">Settings</p>
-                    <p className="" onClick={() => handleLogout(setAuth , navigate , setIsLogoutLoading)}>Logout</p>
+                    <p className="" onClick={() => handleLogout(setAuth , navigate , setIsLoading)}>Logout</p>
                 </div>  
            </div>
          } 

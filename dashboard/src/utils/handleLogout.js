@@ -1,8 +1,8 @@
 import toast from "react-hot-toast";
 
-const handleLogout = (setAuth , navigate , setIsLogoutLoading) => {
+const handleLogout = (setAuth , navigate , setIsLoading) => {
     
-    setIsLogoutLoading(true);
+    setIsLoading(true);
 
     toast.success("Logged out successfully! Redirecting..." , {
         duration: 2500
@@ -12,7 +12,7 @@ const handleLogout = (setAuth , navigate , setIsLogoutLoading) => {
     setTimeout(() => {
         setAuth({user: null , token: ""});
         localStorage.removeItem("authInfo");
-        setIsLogoutLoading(false); 
+        setIsLoading(false); 
         navigate("/login", {replace : true}); 
     }, 2500); 
 }

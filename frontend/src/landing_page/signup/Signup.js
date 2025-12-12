@@ -23,8 +23,9 @@ const Signup = () => {
     e.preventDefault();
     const {email , name , password} = inputValue;
 
-    try{
-          const response = await axios.post("http://localhost:3002/auth/register" , {email , name , password});
+    try{  
+          // const response = await axios.post("http://localhost:3002/auth/register" , {email , name , password});
+          const response = await axios.post("https://fininvest-backend.onrender.com/auth/register" , {email , name , password});
           console.log(response.data);
 
           if(response.data.success){

@@ -5,9 +5,9 @@ import { Toaster } from "react-hot-toast";
 
 const Home = () => {
   
-  const { isLogoutLoading } = useAuth();
+  const { isLoading } = useAuth();
 
-  if(isLogoutLoading){
+  if(isLoading){
      return   ( <div className="loading-screen">
                    <div className="loader"></div>
                    <Toaster />

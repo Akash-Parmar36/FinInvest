@@ -11,10 +11,8 @@ const AuthProvider = ({children}) => {
     //isInitialLoading to clarify it's for initial auth check
     const [isInitialLoading, setIsInitialLoading] = useState(true);
 
-    // const [loading, setLoading] = useState(true);
-
-    // For controlling the full-screen spinner during the logout delay
-    const [isLogoutLoading, setIsLogoutLoading] = useState(false);
+    // For controlling the full-screen spinner during the login and logout delay
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         const storedAuth = localStorage.getItem("authInfo");
@@ -28,7 +26,7 @@ const AuthProvider = ({children}) => {
         setIsInitialLoading(false);
       }, []);
 
-    return <AuthContext.Provider value={{auth , setAuth , isInitialLoading , isLogoutLoading , setIsLogoutLoading}}>
+    return <AuthContext.Provider value={{auth , setAuth , isInitialLoading , isLoading , setIsLoading}}>
         {children}
     </AuthContext.Provider>
 }

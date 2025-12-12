@@ -11,7 +11,7 @@ const Positions = () => {
   const {auth} = useAuth();
   
   useEffect(() => {
-           axios.get("http://localhost:3002/data/allPositions", {
+           axios.get("https://fininvest-backend.onrender.com/data/allPositions", {  //http://localhost:3002/data/allPositions
             headers: {
               'authorization': `${auth.token}`,
               'Content-Type': 'application/json'

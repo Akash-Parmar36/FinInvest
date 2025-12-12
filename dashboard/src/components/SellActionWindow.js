@@ -18,7 +18,7 @@ const SellActionWindow = ({ uid }) => {
   const {auth} = useAuth();
 
   const handleSellClick = async () => {
-    const response = await axios.post("http://localhost:3002/data/newOrder" , {
+    const response = await axios.post("https://fininvest-backend.onrender.com/data/newOrder" , {   //http://localhost:3002/data/newOrder
       name: uid,
       qty: stockQuantity,
       price: stockPrice,
