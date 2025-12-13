@@ -323,11 +323,7 @@ table th {
    justify-content: space-between;
    flex-flow: row wrap;
 }
-
-/* .brokerage_columns {
-  box-sizing: border-box;
-  flex: 0 1 auto;
-} */
+ 
 
 @media screen and (max-width: 800px) {
   .brokerage_columns {
@@ -410,9 +406,9 @@ input:focus {
       border-radius: 4px;
       padding: 0 15px;
       font-size: 18px;
-      border: 2px solid rgb(0, 0 , 0, 0.1);
+      border: 1px solid #eee;
       outline: none;
-      color: #444444;
+      color: #444;
       
  }
 
@@ -420,30 +416,36 @@ input:focus {
      position: absolute;
      top: 50%;
      left: 15px;
-     color: #444444;
+     color: #888;
      font-size: 19px;
      transform: translateY(-50%);
      transition: .3s;
      pointer-events: none;
  }
 
- input:focus{
-  border: 2px solid rgb(0, 0 , 0, 0.2);
+ input:hover{
+  border: 1px solid #aaa;
  }
-
- input:focus ~ label,
- input:valid ~ label{
+ 
+ 
+ .input-field input:focus + label,
+ .input-field input:not(:placeholder-shown) + label{
         top: 0;
         padding: 0 10px;
         font-size: 16px;
         background-color: #fff;
-        color: #000;
+        color: #333;
+ } 
+
+
+ @media (min-width: 576px) {
+    .form-container{
+       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+       background-color: #fff;
+    }
  }
- 
- .form-container{
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-      background-color: #fff;
- }
+
+
 
  .signup-link{
      text-decoration: none;
@@ -480,3 +482,43 @@ input:focus {
      border-radius: 50%;
      padding: 6px;
  }
+
+
+
+ /* spinner after signup by user */
+
+ .loading-screen {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  display: grid;
+  border-radius: 50%;
+  background:
+    linear-gradient(0deg ,rgb(0 0 0/50%) 30%,#0000 0 70%,rgb(0 0 0/100%) 0) 50%/8% 100%,
+    linear-gradient(90deg,rgb(0 0 0/25%) 30%,#0000 0 70%,rgb(0 0 0/75% ) 0) 50%/100% 8%;
+  background-repeat: no-repeat;
+  animation: l23 1s infinite steps(12);
+  
+}
+.loader::before,
+.loader::after {
+   content: "";
+   grid-area: 1/1;
+   border-radius: 50%;
+   background: inherit;
+   opacity: 0.915;
+   transform: rotate(30deg);
+}
+.loader::after {
+   opacity: 0.83;
+   transform: rotate(60deg);
+}
+@keyframes l23 {
+  100% {transform: rotate(1turn)}
+}

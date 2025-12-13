@@ -26,14 +26,14 @@ const Signup = () => {
     try{  
           // const response = await axios.post("http://localhost:3002/auth/register" , {email , name , password});
           const response = await axios.post("https://fininvest-backend.onrender.com/auth/register" , {email , name , password});
-          console.log(response.data);
+          // console.log(response.data);
 
           if(response.data.success){
             toast.success(response.data.message);
           }
 
           setTimeout(() => {
-              window.location.href = "http://localhost:3001/login"; 
+              window.location.href = "https://fininvest-dashboard.onrender.com/login"; 
           }, 2000);
 
     }catch(error){
@@ -43,7 +43,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="container mt-5 mt-md-0 px-5 p-sm-3">
+    <div className="container mt-5 mt-md-0 px-4 p-sm-3">
       <div className="row justify-content-center justify-content-lg-between justify-content-xl-around">
         <div className="col-lg-6 mt-lg-5 mt-xxl-2 px-0 mb-5 mb-lg-0">
           <img
@@ -51,10 +51,10 @@ const Signup = () => {
             className="img-fluid "
           />
         </div>
-        <div className="col d-md-none ps-0 mt-4">
+        <div className="col d-md-none ps-0 mt-4 text-center text-sm-start">
               <h1 className="fw-bolder" style={{color:"#424242" , fontSize:"22px" ,lineHeight:"1.3"}}>Open a free demat & trading account online</h1>
         </div>
-        <div className="col-lg-5 mt-4 mt-lg-0 col-xl-4 form-container border border-black border-1 border-opacity-10 rounded p-5 text-center">
+        <div className="col-lg-5 mt-4 mt-lg-0 col-xl-4 form-container border-top border-bottom border-sm border-black border-1 border-opacity-10 rounded py-5 px-0 px-sm-5 text-center">
                 
               <img
                 src="media/images/kite_logo.png"
@@ -73,6 +73,7 @@ const Signup = () => {
                     name="email"
                     value={inputValue.email}
                     onChange={handleOnChange}
+                    placeholder=" "
                     required
                   />
                   <label htmlFor="email">Email</label>
@@ -83,6 +84,7 @@ const Signup = () => {
                     name="name"
                     value={inputValue.name}
                     onChange={handleOnChange}
+                    placeholder=" "
                     required
                   />
                   <label htmlFor="username">Username</label>
@@ -93,6 +95,7 @@ const Signup = () => {
                     name="password"
                     value={inputValue.password}
                     onChange={handleOnChange}
+                    placeholder=" "
                     required
                   />
                   <label htmlFor="password">Password</label>
@@ -107,7 +110,7 @@ const Signup = () => {
                   </button>
                 </div>
                 <div className="text-center">
-                  <a href="http://localhost:3001/login" className="signup-link">
+                  <a href="https://fininvest-dashboard.onrender.com/login" className="signup-link">   
                     Already have an account? Login!
                   </a>
                 </div>
@@ -120,3 +123,5 @@ const Signup = () => {
 };
 
 export default Signup;
+
+// http://localhost:3001/login

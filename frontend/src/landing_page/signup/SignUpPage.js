@@ -8,11 +8,13 @@ import AccountTypes from './AccountTypes';
 import Faq from './Faq';
 import OpenAccount from '../OpenAccount';
 
+
 function SignUpPage() {
+
     return (
         <>
              <Heading />
-             <Signup />
+             <Signup/>
              <Investment />
              <DematAccount />
              <Pricing />
