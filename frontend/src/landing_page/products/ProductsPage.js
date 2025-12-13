@@ -4,10 +4,15 @@ import Hero from "./Hero";
 import LeftSection from "./LeftSection";
 import RightSection from "./RightSection";
 import Universe from "./Universe";
+import Footer from '../Footer.js';
+import Navbar from '../Navbar.js';
+import ScrollToTop from "../ScrollToTop.js";
 
 function ProductsPage() {
   return (
     <>
+      <Navbar />
+      <ScrollToTop />
       <Hero />
       <LeftSection
         imageURL="media/images/kite.png"
@@ -52,6 +57,7 @@ function ProductsPage() {
       />
       <p className="text-center fs-4">Want to know more about our technology stack? Check out the <a href="#" className="text-decoration-none">Zerodha.tech</a> blog.</p>
       <Universe />
+      <Footer />
     </>
   );
 }

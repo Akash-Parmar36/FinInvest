@@ -1,4 +1,4 @@
-import React from 'react'
+import React , { useState } from 'react'
 import Heading from './Heading';
 import Signup from './Signup';
 import Investment from './Investment';
@@ -7,20 +7,34 @@ import Pricing from './Pricing';
 import AccountTypes from './AccountTypes';
 import Faq from './Faq';
 import OpenAccount from '../OpenAccount';
+import Footer from '../Footer.js';
+import Navbar from '../Navbar.js';
+import ScrollToTop from "../ScrollToTop.js";
 
 
 function SignUpPage() {
 
+    const [loading , setLoading] = useState(false);
+
+    if(loading){
+        return (<div className='loading-screen '>
+                   <div className='loader'></div>
+        </div>)
+    }
+
     return (
-        <>
+        <>   
+             <Navbar />
+             <ScrollToTop />
              <Heading />
-             <Signup/>
+             <Signup setLoading={setLoading}/>
              <Investment />
              <DematAccount />
              <Pricing />
              <AccountTypes />
              <Faq />
              <OpenAccount />
+             <Footer />
         </>
     );
 }

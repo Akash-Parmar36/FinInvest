@@ -7,19 +7,15 @@ import AboutPage from './landing_page/about/AboutPage';
 import ProductsPage from './landing_page/products/ProductsPage';
 import PricingPage from './landing_page/pricing/PricingPage';
 import SupportPage from './landing_page/support/SupportPage';
-import Footer from './landing_page/Footer';
-import Navbar from './landing_page/Navbar';
 import NotFound from './landing_page/NotFound';
 import SignUpPage from './landing_page/signup/SignUpPage';
  
-import ScrollToTop from "./landing_page/ScrollToTop";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
       
          <BrowserRouter>
-               <Navbar />
-               <ScrollToTop />
                <Routes>
                    <Route path='/' element={<HomePage />} /> 
                    <Route path='/signup' element={<SignUpPage />} /> 
@@ -29,7 +25,6 @@ root.render(
                    <Route path='/support' element={<SupportPage />} /> 
                    <Route path='*' element={<NotFound />} /> 
                </Routes>
-               <Footer />
          </BrowserRouter>
 
 );

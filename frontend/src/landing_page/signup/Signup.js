@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import toast, { Toaster } from 'react-hot-toast';
 
-const Signup = () => {
+const Signup = ({setLoading}) => {
   const [inputValue, setInputValue] = useState({
     email: "",
     password: "",
@@ -24,6 +24,7 @@ const Signup = () => {
     const {email , name , password} = inputValue;
 
     try{  
+          setLoading(true);
           // const response = await axios.post("http://localhost:3002/auth/register" , {email , name , password});
           const response = await axios.post("https://fininvest-backend.onrender.com/auth/register" , {email , name , password});
           // console.log(response.data);
@@ -33,11 +34,13 @@ const Signup = () => {
           }
 
           setTimeout(() => {
+              setLoading(false);
               window.location.href = "https://fininvest-dashboard.onrender.com/login"; 
           }, 2000);
 
     }catch(error){
        console.log(error);
+       setLoading(false);
        toast.error(error.response.data.message);
     }
   };
