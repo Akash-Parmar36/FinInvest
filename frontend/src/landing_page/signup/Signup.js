@@ -42,7 +42,7 @@ const Signup = ({loading , setLoading}) => {
             setTimeout(() => {
               window.location.href =
                 "https://fininvest-dashboard.onrender.com/login";
-            }, 200);
+            }, 100);
           }, 1500);
 
 
