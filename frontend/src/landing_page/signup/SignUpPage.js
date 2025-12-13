@@ -29,7 +29,7 @@ function SignUpPage() {
              <Navbar />
              <ScrollToTop />
              <Heading />
-             <Signup setLoading={setLoading}/>
+             <Signup loading={loading} setLoading={setLoading}/>
              <Investment />
              <DematAccount />
              <Pricing />

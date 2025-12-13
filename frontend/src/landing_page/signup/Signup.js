@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import toast from 'react-hot-toast';
 
-const Signup = ({setLoading}) => {
+const Signup = ({loading , setLoading}) => {
   const [inputValue, setInputValue] = useState({
     email: "",
     password: "",
@@ -34,14 +34,13 @@ const Signup = ({setLoading}) => {
           }
 
           setTimeout(() => {
-              setLoading(false);
               window.location.href = "https://fininvest-dashboard.onrender.com/login"; 
           }, 2000);
 
     }catch(error){
        console.log(error);
        setLoading(false);
-       toast.error(error.response.data.message);
+       toast.error(error?.response?.data?.message || "Network error. Please try again.");
     }
   };
 
@@ -108,8 +107,9 @@ const Signup = ({setLoading}) => {
                     type="submit"
                     className="w-100 p-2 text-white border rounded"
                     style={{ backgroundColor: "#FF5722" }}
+                    disabled={loading}
                   >
-                    Submit
+                    {loading ? "Submitting..." : "Submit"}
                   </button>
                 </div>
                 <div className="text-center">
