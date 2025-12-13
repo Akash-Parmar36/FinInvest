@@ -33,32 +33,20 @@ const Login = () => {
          const response = await axios.post("https://fininvest-backend.onrender.com/auth/login" , {email , password});
         //  console.log(response.data);
           
-        //  if(response.data.success){
-        //    toast.success(response.data.message , {
-        //     duration: 2500
-        //    });
-        //  }
-         
-          if(response.data.success){
-            toast.success(response.data.message);
-          }
-
+         if(response.data.success){
+           toast.success(response.data.message , {
+            duration: 2500
+           });
+         }
+ 
          setAuth({user: response.data.name , token: response.data.jwtToken});
          localStorage.setItem("authInfo" , JSON.stringify(response.data));
          
+  
          setTimeout(() => {
-          document.body.classList.add("fade-out");
-    
-          // ⏱️ Wait for fade animation
-          setTimeout(() => {
+             setIsLoading(false);
              navigate("/"); 
-          }, 500);
-        }, 1500);
-
-        //  setTimeout(() => {
-        //      setIsLoading(false);
-        //      navigate("/"); 
-        //  }, 2800);
+         }, 2800);
 
    }catch(error){
       console.log(error);
