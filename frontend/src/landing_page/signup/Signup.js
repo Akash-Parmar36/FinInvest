@@ -1,6 +1,5 @@
 import { useState } from "react";
 import axios from "axios";
-import toast, { Toaster } from 'react-hot-toast';
 
 const Signup = ({setLoading}) => {
   const [inputValue, setInputValue] = useState({
@@ -120,7 +119,6 @@ const Signup = ({setLoading}) => {
               </form>
         </div>
       </div>
-      <Toaster />
     </div>
   );
 };
