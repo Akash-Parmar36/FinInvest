@@ -31,7 +31,7 @@ const Signup = ({loading , setLoading}) => {
 
           if(response.data.success){
             toast.success(response.data.message , {
-               duration: 2200
+               duration: 2000
             });
           }
 
