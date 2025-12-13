@@ -1,5 +1,4 @@
 import { useState , useEffect , createContext , useContext } from "react";
-import { useLocation } from "react-router-dom";
 
 const AuthContext = createContext();
 
@@ -27,11 +26,6 @@ const AuthProvider = ({children}) => {
         setIsInitialLoading(false);
       }, []);
 
-      const location = useLocation();
-
-        useEffect(() => {
-             setIsLoading(false);
-        }, [location.pathname]);
 
     return <AuthContext.Provider value={{auth , setAuth , isInitialLoading , isLoading , setIsLoading}}>
         {children}
