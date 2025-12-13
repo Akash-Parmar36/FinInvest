@@ -26,6 +26,12 @@ const AuthProvider = ({children}) => {
         setIsInitialLoading(false);
       }, []);
 
+      const location = useLocation();
+
+        useEffect(() => {
+             setIsLoading(false);
+        }, [location.pathname]);
+
     return <AuthContext.Provider value={{auth , setAuth , isInitialLoading , isLoading , setIsLoading}}>
         {children}
     </AuthContext.Provider>

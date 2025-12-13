@@ -54,7 +54,7 @@ const Login = () => {
              setIsLoading(false);
              document.body.classList.remove("fade-out");
              navigate("/"); 
-          }, 700);
+          }, 500);
         }, 1500);
 
         //  setTimeout(() => {
