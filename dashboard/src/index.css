@@ -1099,3 +1099,18 @@ cursor: pointer;
 @keyframes l23 {
   100% {transform: rotate(1turn)}
 }
+
+
+
+.fade-out {
+  animation: fadeOut 0.5s ease forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
