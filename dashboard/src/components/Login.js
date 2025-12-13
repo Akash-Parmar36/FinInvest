@@ -52,6 +52,7 @@ const Login = () => {
           // ⏱️ Wait for fade animation
           setTimeout(() => {
              setIsLoading(false);
+             document.body.classList.remove("fade-out");
              navigate("/"); 
           }, 500);
         }, 1500);
