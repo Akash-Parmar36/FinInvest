@@ -30,13 +30,14 @@ const Signup = ({loading , setLoading}) => {
           // console.log(response.data);
 
           if(response.data.success){
-            toast.success(response.data.message);
+            toast.success(response.data.message , {
+               duration: 2500
+            });
           }
 
           setTimeout(() => {
               window.location.href = "https://fininvest-dashboard.onrender.com/login"; 
           }, 2000);
-
 
     }catch(error){
        console.log(error);
