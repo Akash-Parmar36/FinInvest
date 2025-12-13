@@ -50,7 +50,7 @@ const Login = () => {
    }catch(error){
       console.log(error);
       setIsLoading(false);
-      toast.error(error?.response?.data?.message || "Login failed");
+      toast.error(error?.response?.data?.message || "Network error. Please try again.");
    }
  };
 

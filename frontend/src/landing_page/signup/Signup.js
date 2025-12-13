@@ -32,21 +32,10 @@ const Signup = ({loading , setLoading}) => {
           if(response.data.success){
             toast.success(response.data.message);
           }
-          
+
           setTimeout(() => {
-            document.body.classList.add("fade-out");
-      
-            // ⏱️ Wait for fade animation
-            setTimeout(() => {
-              window.location.href =
-                "https://fininvest-dashboard.onrender.com/login";
-            }, 500);
-          }, 1500);
-
-
-          // setTimeout(() => {
-          //     window.location.href = "https://fininvest-dashboard.onrender.com/login"; 
-          // }, 2000);
+              window.location.href = "https://fininvest-dashboard.onrender.com/login"; 
+          }, 2000);
 
 
     }catch(error){
