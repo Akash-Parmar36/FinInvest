@@ -10,7 +10,7 @@ import OpenAccount from '../OpenAccount';
 import Footer from '../Footer.js';
 import Navbar from '../Navbar.js';
 import ScrollToTop from "../ScrollToTop.js";
-import toast, { Toaster } from 'react-hot-toast';
+import  { Toaster } from 'react-hot-toast';
 
 
 function SignUpPage() {

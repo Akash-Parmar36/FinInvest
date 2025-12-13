@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import toast from 'react-hot-toast';
 
 const Signup = ({setLoading}) => {
   const [inputValue, setInputValue] = useState({
