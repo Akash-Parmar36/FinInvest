@@ -128,7 +128,7 @@ return (
         </a>
       </p>
       <p className="zerodha_account">
-        <a href="http://localhost:3000/signup">
+        <a href="https://fininvest-frontend.onrender.com/signup">
           Don't have an account? Signup now!
         </a>
       </p>
@@ -145,3 +145,6 @@ return (
 };
 
 export default Login;
+
+
+//http://localhost:3000/signup

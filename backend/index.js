@@ -34,7 +34,7 @@ async function main() {
 // CORS FIX (IMPORTANT)
 app.use(
   cors({
-    origin: "https://fininvest-dashboard.onrender.com",
+    origin: ["https://fininvest-dashboard.onrender.com","https://fininvest-frontend.onrender.com"],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "authorization"],
     credentials: true,
