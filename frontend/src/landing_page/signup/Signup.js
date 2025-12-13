@@ -34,10 +34,22 @@ const Signup = ({loading , setLoading}) => {
                duration: 2500
             });
           }
-
+          
           setTimeout(() => {
-              window.location.href = "https://fininvest-dashboard.onrender.com/login"; 
-          }, 2000);
+            document.body.classList.add("fade-out");
+      
+            // ⏱️ Wait for fade animation
+            setTimeout(() => {
+              window.location.href =
+                "https://fininvest-dashboard.onrender.com/login";
+            }, 500);
+          }, 1500);
+          
+
+          // setTimeout(() => {
+          //     window.location.href = "https://fininvest-dashboard.onrender.com/login"; 
+          // }, 2000);
+
 
     }catch(error){
        console.log(error);
