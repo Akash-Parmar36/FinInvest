@@ -30,9 +30,7 @@ const Signup = ({loading , setLoading}) => {
           // console.log(response.data);
 
           if(response.data.success){
-            toast.success(response.data.message , {
-               duration: 2500
-            });
+            toast.success(response.data.message);
           }
           
           setTimeout(() => {
